@@ -17,7 +17,6 @@ def main():
             
         bitcoin_block = Block().parse_from_binary(read(target_file))
         print bitcoin_block
-
-if __name__ == '__main__':
+      
+if __name__ == "__main__":
     main()
-       
