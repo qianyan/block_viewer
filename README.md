@@ -2,8 +2,23 @@ Bitcoin block viewer
 ===
 
 ## Installing
-```python
+```bash
 python setup.py install
+```
+
+## Run tests
+```bash
+python setup.py test
+```
+
+## Run command line
+```
+python setup.py install
+block_viewer 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
+```
+or
+```
+python src/block_viewer/cli.py 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
 ```
 
 ## References
