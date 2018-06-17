@@ -36,3 +36,16 @@ class Transaction(object):
         self.size = offset + 4
         
         return self
+
+    def __repr__(self):
+        return '<version_no: {version_no}, \n' \
+            'in_counter: {in_counter}, \n' \
+            'inputs: {inputs}, \n' \
+            'out_counter: {out_counter}, \n' \
+            'outputs: {outputs}, \n' \
+            'lock_time: {lock_time}>\n\n'.format(version_no=self.version_no,
+                                               in_counter=self.in_counter,
+                                               inputs=self.inputs,
+                                               out_counter=self.out_counter,
+                                               outputs=self.outputs,
+                                               lock_time=self.lock_time)

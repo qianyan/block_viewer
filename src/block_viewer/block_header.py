@@ -19,3 +19,16 @@ class BlockHeader(object):
         self.bits = decode_uint32(binary_data[72:76])
         self.nonce = decode_uint32(binary_data[76:80])
         return self
+
+    def __repr__(self):
+        return '<version: {version}, \n' \
+            'hash_previous_block: {hash_previous_block}, \n' \
+            'hash_merkle_root: {hash_merkle_root}, \n' \
+            'time: {time}, \n' \
+            'bits: {bits}, \n' \
+            'nonce: {nonce}>'.format(version=self.version,
+                                       hash_previous_block=self.hash_previous_block,
+                                       hash_merkle_root=self.hash_merkle_root,
+                                       time=self.time,
+                                       bits=self.bits,
+                                       nonce=self.nonce)

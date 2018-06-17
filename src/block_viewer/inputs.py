@@ -36,3 +36,15 @@ class Input(object):
         offset += 4
         self.size = offset
         return self
+
+    def __repr__(self):
+        return '<' \
+            'previous_tx_hash: {previous_tx_hash}, \n' \
+            'index: {index}, \n' \
+            'txin_script_length: {txin_script_length}, \n' \
+            'script_sig: {script_sig}, \n' \
+            'sequence_no: {sequence_no}>'.format(previous_tx_hash=self.previous_tx_hash,
+                                                   index=self.index,
+                                                   txin_script_length=self.txin_script_length,
+                                                   script_sig=self.script_sig,
+                                                   sequence_no=self.sequence_no)

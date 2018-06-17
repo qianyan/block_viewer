@@ -68,3 +68,4 @@ def test_block_transactions_could_be_limited():
 
     assert len(bitcoin_block.txs) == 1
     
+

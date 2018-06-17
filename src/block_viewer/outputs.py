@@ -28,3 +28,10 @@ class Output(object):
         offset += self.txout_script_length
         self.size = offset
         return self
+
+    def __repr__(self):
+        return '<value: {value}, \n' \
+            'txout_script_length: {txout_script_length}, \n' \
+            'script_pubkey: {script_pubkey}>'.format(value=self.value,
+                                                       txout_script_length=self.txout_script_length,
+                                                       script_pubkey=self.script_pubkey)

@@ -27,3 +27,14 @@ class Block(object):
             offset += tx.size
 
         return self
+
+    def __repr__(self):
+        return '<magic_number: {magic_number}, \n' \
+            'block_size: {block_size}, \n' \
+            'block_header: {block_header}, \n' \
+            'tx_counter: {tx_counter}, \n' \
+            'txs: {txs}>'.format(magic_number=self.magic_number,
+                                 block_size = self.block_size,
+                                 block_header = self.block_header,
+                                 tx_counter = self.tx_counter,
+                                 txs = self.txs)
