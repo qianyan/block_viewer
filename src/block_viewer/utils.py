@@ -27,3 +27,7 @@ def decode_uint32(data):
 
 def format_hash(data):
     return str(hexlify(data[::-1]).decode('utf-8'))
+
+def decode_uint64(data):
+    assert(len(data) == 8)
+    return struct.unpack("<Q", data)[0]

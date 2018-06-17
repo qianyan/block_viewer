@@ -20,4 +20,14 @@ def test_block_header_parser():
     assert block_header.bits == 404129525
     assert block_header.nonce == 226994584
     
+def test_block_transactions_parser():
+    binary_data = read('tests/fixtures/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.bin')
+    bitcoin_block = Block().parse_from_binary(binary_data)
+
+    coinbase = bitcoin_block.txs[0]
+
+    assert coinbase.version_no == 1
+    assert coinbase.in_counter == 1
+    assert coinbase.out_counter == 1
+ 
 
