@@ -18,7 +18,7 @@ class Block(object):
         self.tx_counter, varint_size = decode_varint(block_data[offset:])
         offset += varint_size
 
-        for i in range(1):
+        for i in range(2):
             tx = Transaction().parse_from_binary(block_data[offset:])
             self.txs.append(tx)
             offset += tx.size
