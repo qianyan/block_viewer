@@ -1,5 +1,7 @@
 from utils import decode_uint64
 from utils import decode_varint
+from script import Script
+from binascii import b2a_hex
 
 class Output(object):
     def __init__(self, value=None, txout_script_length=None, script_pubkey=None):
@@ -12,7 +14,16 @@ class Output(object):
         self.value = decode_uint64(output_data[:offset])
         self.txout_script_length, varint_size = decode_varint(output_data[8:])
         offset += varint_size
-        self.script_pubkey = "TODO"
+        script = Script().parse_from_binary(output_data[offset:offset+self.txout_script_length])
+        operations = list(script)
+        parts = []
+        for operation in operations:
+            if isinstance(operation, bytes):
+                parts.append(b2a_hex(operation).decode("ascii"))
+            else:
+                parts.append(str(operation))
+
+        self.script_pubkey = " ".join(parts)
 
         offset += self.txout_script_length
         self.size = offset

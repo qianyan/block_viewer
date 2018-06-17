@@ -1,6 +1,8 @@
 from utils import format_hash
 from utils import decode_varint
 from utils import decode_uint32
+from script import Script
+from binascii import b2a_hex
 
 class Input(object):
     def __init__(self, previous_tx_hash=None, index=None, txin_script_length=None, script_sig=None, sequence_no=None):
@@ -18,7 +20,15 @@ class Input(object):
         offset += 4
         self.txin_script_length, varint_size = decode_varint(input_data[offset:])
         offset += varint_size
-        self.script_sig = "TODO"
+        script = Script().parse_from_binary(input_data[offset:offset+self.txin_script_length])
+        operations = list(script)
+        parts = []
+        for operation in operations:
+            if isinstance(operation, bytes):
+                parts.append(b2a_hex(operation).decode("ascii"))
+            else:
+                parts.append(str(operation))
+        self.script_sig = " ".join(parts)
 
         offset += self.txin_script_length
 
