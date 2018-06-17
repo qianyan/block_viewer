@@ -10,7 +10,7 @@ class Block(object):
         self.tx_counter = tx_counter
         self.txs = txs or []
 
-    def parse_from_binary(self, block_data):
+    def parse_from_binary(self, block_data, top=5):
         block_header_size = 80
         offset = block_header_size
         self.block_header = BlockHeader().parse_from_binary(block_data[:offset])
@@ -18,7 +18,10 @@ class Block(object):
         self.tx_counter, varint_size = decode_varint(block_data[offset:])
         offset += varint_size
 
-        for i in range(2):
+        if(top >= self.tx_counter): 
+            top = self.tx_counter
+
+        for i in range(top):
             tx = Transaction().parse_from_binary(block_data[offset:])
             self.txs.append(tx)
             offset += tx.size

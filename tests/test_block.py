@@ -58,3 +58,13 @@ def test_block_inputs_scriptSig():
     assert inputs[0].script_sig == '304402207b9e4d1c1e126f47db3d74f981b8ee9c124f44a92637a657dc94cd4b05216a9a022014fe5df34c6e2c3b1bb1de3f69097873e220b97c0beefd29cc714abeb8180c8801 030e1e08f6d4ba2b71207c961109f9d0b7eaad24b106ecc9b691c297c732d47fcc'
     assert outputs[1].script_pubkey == 'OP_DUP OP_HASH160 d6bbf4f08d2df7ea32b2930ae4b7436d4ca6fe4b OP_EQUALVERIFY OP_CHECKSIG'
    
+def test_block_transactions_could_be_limited():
+    binary_data = read('tests/fixtures/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.bin')
+    bitcoin_block = Block().parse_from_binary(binary_data)
+
+    assert len(bitcoin_block.txs) == 5
+
+    bitcoin_block = Block().parse_from_binary(binary_data, 1)
+
+    assert len(bitcoin_block.txs) == 1
+    
