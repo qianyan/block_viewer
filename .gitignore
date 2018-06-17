@@ -1,0 +1,6 @@
+.eggs/
+.pytest_cache/
+dist/
+__pycache__/
+bitcoin_viewer.egg-info/
+*.pyc
