@@ -1,5 +1,6 @@
 Bitcoin block viewer
 ===
+[![CircleCI](https://circleci.com/gh/qianyan/block_viewer.svg?style=svg)](https://circleci.com/gh/qianyan/block_viewer)
 
 ## Installing
 ```bash
