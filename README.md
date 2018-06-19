@@ -1,25 +1,30 @@
 Bitcoin block viewer
 ===
 [![CircleCI](https://circleci.com/gh/qianyan/block_viewer.svg?style=svg)](https://circleci.com/gh/qianyan/block_viewer)
-
+## Prerequisites
+```
+python3 --version
+-> Python 3.6.5
+```
 ## Installing
 ```bash
-python setup.py install
+python3 setup.py install
 ```
 
 ## Run tests
 ```bash
-python setup.py test
+python3 setup.py test
 ```
 
 ## Run command line
 ```
-python setup.py install
+python3 setup.py install
+
 block_viewer 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
 ```
 or
 ```
-python src/block_viewer/cli.py 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
+python3 src/block_viewer/cli.py 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
 ```
 
 ## References
