@@ -1,6 +1,6 @@
-from utils import decode_uint64
-from utils import decode_varint
-from script import Script
+from block_viewer.utils import decode_uint64
+from block_viewer.utils import decode_varint
+from block_viewer.script import Script
 from binascii import b2a_hex
 
 class Output(object):

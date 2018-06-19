@@ -1,7 +1,7 @@
-from utils import format_hash
-from utils import decode_varint
-from utils import decode_uint32
-from script import Script
+from block_viewer.utils import format_hash
+from block_viewer.utils import decode_varint
+from block_viewer.utils import decode_uint32
+from block_viewer.script import Script
 from binascii import b2a_hex
 
 class Input(object):

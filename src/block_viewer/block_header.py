@@ -1,5 +1,5 @@
-from utils import decode_uint32
-from utils import format_hash
+from block_viewer.utils import decode_uint32
+from block_viewer.utils import format_hash
 
 class BlockHeader(object):
     def __init__(self, version=None, hash_previous_block=None, hash_merkle_root=None, time=None, bits=None, nonce=None):

@@ -1,6 +1,6 @@
-from utils import decode_varint
-from block_header import BlockHeader
-from transaction import Transaction
+from block_viewer.utils import decode_varint
+from block_viewer.block_header import BlockHeader
+from block_viewer.transaction import Transaction
 
 class Block(object):
     def __init__(self, magic_number=0xD9B4BEF9, block_size=None, block_header=None, tx_counter=None, txs=None):

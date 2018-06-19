@@ -3,7 +3,7 @@ from binascii import hexlify
 
 def decode_varint(data):
     assert(len(data) > 0)
-    size = ord(data[0])
+    size = int(data[0])
     assert(size <= 255)
 
     if size < 253:

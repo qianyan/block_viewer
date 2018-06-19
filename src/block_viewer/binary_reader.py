@@ -1,5 +1,4 @@
 import mmap
-from block import Block
 
 def read(binary_file):
      with open(binary_file, 'rb') as block_binary:

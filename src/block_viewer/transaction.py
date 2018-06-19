@@ -1,7 +1,7 @@
-from utils import decode_uint32
-from utils import decode_varint
-from inputs import Input
-from outputs import Output
+from block_viewer.utils import decode_uint32
+from block_viewer.utils import decode_varint
+from block_viewer.inputs import Input
+from block_viewer.outputs import Output
 
 class Transaction(object):
     def __init__(self, version_no=None, in_counter=None, inputs=None, out_counter=None, outputs=None, lock_time=None):
