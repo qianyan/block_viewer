@@ -15,7 +15,7 @@ setup(
     long_description=readme,
     author='Yan Qian',
     author_email='qianyan.lambda@gmail.com',
-    url='https://github.com/qianyan/bitcoin-viewer',
+    url='https://github.com/qianyan/block_viewer',
     license=license,
     packages=find_packages('src', exclude=('tests', 'docs')),
     package_dir={'': 'src'},
