@@ -27,6 +27,7 @@ setup(
         ],
     },
     install_requires=[
+        'requests',
         'python-bitcoinlib==0.5.0'
     ]
 )

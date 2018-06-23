@@ -8,23 +8,25 @@ python3 --version
 ```
 ## Installing
 ```bash
-python3 setup.py install
+$ python3 -m venv venv
+$ . venv/bin/activate
+venv> python3 setup.py install
 ```
 
 ## Run tests
 ```bash
-python3 setup.py test
+venv> python3 setup.py test
 ```
 
 ## Run command line
 ```
-python3 setup.py install
+venv> python3 setup.py install
 
-block_viewer 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
+venv> block_viewer 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
 ```
 or
 ```
-python3 src/block_viewer/cli.py 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
+venv> python3 src/block_viewer/cli.py 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9
 ```
 
 ## References
