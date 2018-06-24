@@ -4,7 +4,14 @@ from block_viewer.inputs import Input
 from block_viewer.outputs import Output
 
 class Transaction(object):
-    def __init__(self, version_no=None, in_counter=None, inputs=None, out_counter=None, outputs=None, lock_time=None):
+    def __init__(self,
+                 version_no=None,
+                 in_counter=None,
+                 inputs=None,
+                 out_counter=None,
+                 outputs=None,
+                 lock_time=None):
+
         self.version_no = version_no
         self.in_counter = in_counter
         self.inputs = inputs or []

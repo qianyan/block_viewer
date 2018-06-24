@@ -2,7 +2,14 @@ from block_viewer.utils import decode_uint32
 from block_viewer.utils import format_hash
 
 class BlockHeader(object):
-    def __init__(self, version=None, hash_previous_block=None, hash_merkle_root=None, time=None, bits=None, nonce=None):
+    def __init__(self,
+                 version=None,
+                 hash_previous_block=None,
+                 hash_merkle_root=None,
+                 time=None,
+                 bits=None,
+                 nonce=None):
+
         self.version = version
         self.hash_previous_block = hash_previous_block
         self.hash_merkle_root = hash_merkle_root

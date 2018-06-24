@@ -4,7 +4,11 @@ from block_viewer.script import Script
 from binascii import b2a_hex
 
 class Output(object):
-    def __init__(self, value=None, txout_script_length=None, script_pubkey=None):
+    def __init__(self,
+                 value=None,
+                 txout_script_length=None,
+                 script_pubkey=None):
+
         self.value = value
         self.txout_script_length = txout_script_length
         self.script_pubkey = script_pubkey

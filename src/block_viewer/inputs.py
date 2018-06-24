@@ -5,7 +5,13 @@ from block_viewer.script import Script
 from binascii import b2a_hex
 
 class Input(object):
-    def __init__(self, previous_tx_hash=None, index=None, txin_script_length=None, script_sig=None, sequence_no=None):
+    def __init__(self,
+                 previous_tx_hash=None,
+                 index=None,
+                 txin_script_length=None,
+                 script_sig=None,
+                 sequence_no=None):
+
         self.previous_tx_hash = previous_tx_hash
         self.index = index
         self.txin_script_length = txin_script_length
