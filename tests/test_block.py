@@ -1,5 +1,5 @@
-from block_viewer import read
-from block_viewer import Block
+from block_viewer.block import Block
+from block_viewer.binary_reader import read
 
 def test_block_parser():
     binary_data = read('tests/fixtures/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.bin')

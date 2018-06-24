@@ -33,6 +33,7 @@ setup(
         ],
     },
     install_requires=[
+        'docopt==0.6.2',
         'requests',
         'python-bitcoinlib==0.5.0'
     ]
