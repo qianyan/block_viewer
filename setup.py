@@ -10,14 +10,20 @@ with open('LICENSE') as f:
 
 setup(
     name='block_viewer',
-    version='1.0.0',
+    version='1.0.1',
     description='a viewer for bitcoin block structure including blockheaer, transactions etc.',
     long_description=readme,
+    long_description_content_type="text/markdown",
     author='Yan Qian',
     author_email='qianyan.lambda@gmail.com',
     url='https://github.com/qianyan/block_viewer',
     license=license,
     packages=find_packages('src', exclude=('tests', 'docs')),
+    classifiers=(
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ),
     package_dir={'': 'src'},
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
