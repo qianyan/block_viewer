@@ -1,6 +1,7 @@
 from block_viewer.utils import decode_uint32
 from block_viewer.utils import format_hash
 
+
 class BlockHeader(object):
     def __init__(self,
                  version=None,
@@ -33,9 +34,10 @@ class BlockHeader(object):
             'hash_merkle_root: {hash_merkle_root}, \n' \
             'time: {time}, \n' \
             'bits: {bits}, \n' \
-            'nonce: {nonce}>'.format(version=self.version,
-                                       hash_previous_block=self.hash_previous_block,
-                                       hash_merkle_root=self.hash_merkle_root,
-                                       time=self.time,
-                                       bits=self.bits,
-                                       nonce=self.nonce)
+            'nonce: {nonce}>'.format(
+                version=self.version,
+                hash_previous_block=self.hash_previous_block,
+                hash_merkle_root=self.hash_merkle_root,
+                time=self.time,
+                bits=self.bits,
+                nonce=self.nonce)

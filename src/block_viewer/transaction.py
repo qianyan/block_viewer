@@ -3,6 +3,7 @@ from block_viewer.utils import decode_varint
 from block_viewer.inputs import Input
 from block_viewer.outputs import Output
 
+
 class Transaction(object):
     def __init__(self,
                  version_no=None,
@@ -41,7 +42,7 @@ class Transaction(object):
 
         self.lock_time = decode_uint32(tx_data[offset:offset+4])
         self.size = offset + 4
-        
+
         return self
 
     def __repr__(self):
@@ -51,8 +52,8 @@ class Transaction(object):
             'out_counter: {out_counter}, \n' \
             'outputs: {outputs}, \n' \
             'lock_time: {lock_time}>\n\n'.format(version_no=self.version_no,
-                                               in_counter=self.in_counter,
-                                               inputs=self.inputs,
-                                               out_counter=self.out_counter,
-                                               outputs=self.outputs,
-                                               lock_time=self.lock_time)
+                                                 in_counter=self.in_counter,
+                                                 inputs=self.inputs,
+                                                 out_counter=self.out_counter,
+                                                 outputs=self.outputs,
+                                                 lock_time=self.lock_time)

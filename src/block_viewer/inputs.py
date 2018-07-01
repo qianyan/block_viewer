@@ -4,6 +4,7 @@ from block_viewer.utils import decode_uint32
 from block_viewer.script import Script
 from binascii import b2a_hex
 
+
 class Input(object):
     def __init__(self,
                  previous_tx_hash=None,
@@ -25,8 +26,10 @@ class Input(object):
         self.index = decode_uint32(input_data[offset:offset + 4])
         offset += 4
         self.txin_script_length, varint_size = decode_varint(input_data[offset:])
+
         offset += varint_size
         script = Script().parse_from_binary(input_data[offset:offset+self.txin_script_length])
+
         operations = list(script)
         parts = []
         for operation in operations:
@@ -50,7 +53,7 @@ class Input(object):
             'txin_script_length: {txin_script_length}, \n' \
             'script_sig: {script_sig}, \n' \
             'sequence_no: {sequence_no}>'.format(previous_tx_hash=self.previous_tx_hash,
-                                                   index=self.index,
-                                                   txin_script_length=self.txin_script_length,
-                                                   script_sig=self.script_sig,
-                                                   sequence_no=self.sequence_no)
+                                                 index=self.index,
+                                                 txin_script_length=self.txin_script_length,
+                                                 script_sig=self.script_sig,
+                                                 sequence_no=self.sequence_no)

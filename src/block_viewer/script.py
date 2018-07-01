@@ -1,5 +1,6 @@
 from bitcoin.core.script import CScript
 
+
 class Script(object):
     def __init__(self, script=None):
         self.script = script

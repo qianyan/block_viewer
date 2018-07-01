@@ -2,6 +2,7 @@ from block_viewer.utils import decode_varint
 from block_viewer.block_header import BlockHeader
 from block_viewer.transaction import Transaction
 
+
 class Block(object):
     def __init__(self,
                  magic_number=0xD9B4BEF9,
@@ -24,7 +25,7 @@ class Block(object):
         self.tx_counter, varint_size = decode_varint(block_data[offset:])
         offset += varint_size
 
-        if(top >= self.tx_counter): 
+        if(top >= self.tx_counter):
             top = self.tx_counter
 
         for i in range(top):
@@ -40,7 +41,7 @@ class Block(object):
             'block_header: {block_header}, \n' \
             'tx_counter: {tx_counter}, \n' \
             'txs: {txs}>'.format(magic_number=self.magic_number,
-                                 block_size = self.block_size,
-                                 block_header = self.block_header,
-                                 tx_counter = self.tx_counter,
-                                 txs = self.txs)
+                                 block_size=self.block_size,
+                                 block_header=self.block_header,
+                                 tx_counter=self.tx_counter,
+                                 txs=self.txs)

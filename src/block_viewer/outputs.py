@@ -3,6 +3,7 @@ from block_viewer.utils import decode_varint
 from block_viewer.script import Script
 from binascii import b2a_hex
 
+
 class Output(object):
     def __init__(self,
                  value=None,
@@ -37,5 +38,5 @@ class Output(object):
         return '<value: {value}, \n' \
             'txout_script_length: {txout_script_length}, \n' \
             'script_pubkey: {script_pubkey}>'.format(value=self.value,
-                                                       txout_script_length=self.txout_script_length,
-                                                       script_pubkey=self.script_pubkey)
+                                                     txout_script_length=self.txout_script_length,
+                                                     script_pubkey=self.script_pubkey)
